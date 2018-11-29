@@ -1,0 +1,19 @@
+#!/bin/bash
+#UserData injection for Linux EC2 deployed instances
+# CentOS Compatible
+
+#Install wget
+sudo yum install -y wget
+sudo yum install -y unzip
+
+# set hostname before EPO agent install
+sudo bash -c "echo InstanceName.ansa.aws > /etc/hostname"
+sudo hostname InstanceName
+
+# Download EPO agent
+# use ansible to push out EPO instead
+#wget http://ansible.ansa.aws/agentPackages.zip -O /tmp/agentPackages.zip
+#cd /tmp
+#unzip agentPackages.zip
+#chmod +x install.sh
+#sudo /tmp/install.sh -i
